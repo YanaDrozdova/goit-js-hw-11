@@ -6,9 +6,56 @@
     <title>Homework 11</title>
     
     <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-c9db6b34.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-8c59ed88.js">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-1cd1f9d9.css">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-ff5597a3.css">
   </head>
   <body>
+    <form class="form">
+      <input
+        type="text"
+        name="query"
+        placeholder="Search images..."
+        required
+        autocomplete="off"
+      />
+      <button type="submit" class="search-btn">Search</button>
+    </form>
+    <div class="container">
+      <ul class="gallery-list"></ul>
+      <div class="loader position is-hidden"></div>
+    </div>
     
   </body>
 </html>
+
+<!-- <li class="gallery-card">
+  <a class="gallery-link" href="${photo.hits.largeImageURL}">
+    <img
+      class="gallery-photo"
+      src="${photo.hits.webformatURL}"
+      data-source="${photo.hits.largeImageURL}"
+      alt="${photo.hits.tags}"
+    />
+  </a>
+  <div class="under-img-info">
+    <ul class="list-info">
+      <li class="item-info">
+        <h3 class="title-info">Likes</h3>
+        <p class="text-info">${photo.hits.likes}</p>
+      </li>
+      <li class="item-info">
+        <h3 class="title-info">Views</h3>
+        <p class="text-info">${photo.hits.views}</p>
+      </li>
+      <li class="item-info">
+        <h3 class="title-info">Comments</h3>
+        <p class="text-info">${photo.hits.comments}</p>
+      </li>
+      <li class="item-info">
+        <h3 class="title-info">Downloads</h3>
+        <p class="text-info">${photo.hits.downloads}</p>
+      </li>
+    </ul>
+  </div>
+</li> -->
