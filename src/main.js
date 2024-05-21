@@ -10,7 +10,10 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 const galleryEl = document.querySelector('.gallery-list');
 const searchFormEl = document.querySelector('.form');
 const loaderEl = document.querySelector('.loader');
-let lightbox;
+let lightbox = new SimpleLightbox('.gallery-list a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 
 function onSearchFormSubmit(event) {
   event.preventDefault();
@@ -40,9 +43,7 @@ function onSearchFormSubmit(event) {
         });
       }
       galleryEl.innerHTML = createGalleryMarkup(photosData.hits);
-      if (lightbox) {
-        lightbox.refresh();
-      }
+      lightbox.refresh();
     })
     .catch(error => console.log(error))
     .finally(() => {
@@ -51,14 +52,4 @@ function onSearchFormSubmit(event) {
     });
 }
 
-function onImgClick(event) {
-  event.preventDefault();
-  if (event.target === event.currentTarget) return;
-  lightbox = new SimpleLightbox('.gallery-list a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
-}
-
 searchFormEl.addEventListener('submit', onSearchFormSubmit);
-galleryEl.addEventListener('click', onImgClick);
